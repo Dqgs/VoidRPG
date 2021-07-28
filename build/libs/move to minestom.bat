@@ -1,0 +1,1 @@
+move "C:\Users\jllas\Desktop\Games\Plugins\VoidRPG\build\libs\VoidRPG-1.0-SNAPSHOT-all.jar" "C:\Users\jllas\Desktop\Minecraft Servers\Minecraft server\MineStome"

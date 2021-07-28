@@ -1,0 +1,16 @@
+{
+  "entrypoint": "net.voidmc.voidrpg.Start",
+  "name": "VoidRPG",
+  "codeModifiers": [
+  ],
+  "dependencies": [
+  ],
+  "externalDependencies": {
+    "repositories": [
+      {"name": "jitpack.io", "url": "https://jitpack.io"}
+    ],
+    "artifacts": [
+      "com.github.square:javapoet:0a6ee12"
+    ]
+  }
+}

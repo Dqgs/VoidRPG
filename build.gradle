@@ -1,0 +1,54 @@
+plugins {
+    id 'java'
+    id "com.github.johnrengelman.shadow" version "7.0.0"
+}
+
+group = 'net.VoidMc'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+
+    maven { url 'https://repo.aikar.co/content/groups/aikar/' }
+    maven { url 'https://repo.spongepowered.org/maven' }
+    maven { url 'https://repo.velocitypowered.com/snapshots/' }
+    maven { url 'https://jitpack.io' }
+    maven { url 'https://repo.minestom.net/repository/maven-public/' }
+
+}
+
+compileJava {
+    options.compilerArgs += ["-parameters"]
+    options.fork = true
+    options.forkOptions.executable = 'javac'
+}
+
+dependencies {
+    implementation 'com.github.Minestom:Minestom:new-block-api-SNAPSHOT'
+
+    implementation 'org.projectlombok:lombok:1.18.18'
+    implementation 'org.spongepowered:configurate-yaml:4.1.1'
+    implementation 'com.github.Querz:NBT:6.1'
+    implementation 'mysql:mysql-connector-java:8.0.25'
+    implementation 'com.zaxxer:HikariCP:5.0.0'
+
+    implementation project(":acf-minestom")
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'net.voidmc.voidrpg.Start',
+                "Multi-Release": true
+        )
+    }
+}
+
+shadowJar {
+    relocate 'co.aikar.commands', 'net.voidmc.voidrpg.acf'
+    relocate 'co.aikar.locales', 'net.voidmc.voidrpg.locales'
+    mergeServiceFiles()
+}
+
+build.dependsOn shadowJar

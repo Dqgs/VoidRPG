@@ -1,0 +1,3 @@
+rootProject.name = 'VoidRPG'
+include ':acf-minestom'
+project(':acf-minestom').projectDir = new File('C:/Users/jllas/Desktop/Games/Plugins/VoidRPG/acf-minestom')

@@ -1,0 +1,4 @@
+name: VoidRPG
+version: @version@
+main: net.voidmc.voidrpg.VoidRPG
+api-version: 1.17
